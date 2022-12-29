@@ -3,9 +3,7 @@ How to check your server load
 How to install netstat
 We’re going to be using the netstat tool to find out what IP addresses are currently connected to your server. To install netstat on Ubuntu, you actually install net-tools, like so:
 
-<code>
-sudo apt-get install net-tools -y
-</code>
+<code>sudo apt-get install net-tools -y</code>
 
 
 To check for the number of logical processors, issue the command:
@@ -14,7 +12,7 @@ To check for the number of logical processors, issue the command:
 
 We next want to check our network load. There are a number of tools you can do this with, but I choose nload. To install nload, issue the command:
 
-<code>udo apt-get install nload -y</code>
+<code>sudo apt-get install nload -y</code>
 
 How to find out what IP addresses are connected to your server
 
