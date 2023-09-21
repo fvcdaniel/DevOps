@@ -1,0 +1,21 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - qemu-guest-agent
+
+timezone: America/Recife
+users:
+  - name: cardoso
+    passwd: $6$rounds=4096$nralFttZ3jJ1Q50n$TLsE/we4TinefCof37y7DnpnUFqcuXO.Ne/rND/FXSPRUl2FSU2UIJPFdziQ4y706prMLguDamwVGWSRACddJ.
+    groups: [adm, cdrom, dip, plugdev, lxd, sudo]
+    lock-passwd: false
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFmzApuMkCmHNpIg+CGg0NMLYnQ5X8FyhVLtq66MO718Z3XKOWrwxLg6+w7SUsGW5IFkYamZnRUeLNpCyuC3Dus/IGpjCoUN9PFFPEdJlXuTLus6K9NmXTeaVM+dvJTpE+HJYXCAtFupMkRizX5n4duGLcTSL3nNeclEAzk3FFjTPPxFutBUzS7cfzjtT7lOOIthaTlFL8crtivdr2JKSIzTc4pJvc5m2EXaOj6XmOwW8rH5FoOlt6W4YKO9SLvfaxwEi/wZRrgixPi05mlWYVrGs0C7moCo2J8pvNs9YTGmUivsinuNsGsFOBukusHJI0EnQvROA1DgDXKT3sSunV cardoso@MBP-de-Daniel
+
+power_state:
+    delay: now
+    mode: reboot
+    message: Rebooting after cloud-init completion
+    condition: true
